@@ -1,13 +1,20 @@
 #include <iostream>
 #include <ctime>
-#include <cstdlib>
 #include <conio.h>
 #include <string>
+#include <stdio.h>
 using namespace std;
 int main(){
 	string input;
-	while(!kbhit()){
-		
+	char s;
+	int cmode=0;
+	do{
+		if(kbhit()) 
+   		    {
+            s=getch();        //gets what key is pressed
+            if(s!='~') cmode=1;
+    	    }
+    	    		
 	//PRIMERA PANTALLA QUE SE MOSTRARA AL USUARIO//
 		for(int k=1; k<=10; k++){
 			for(int m=1; m<=79; m++){
@@ -31,11 +38,14 @@ int main(){
 			cout<<"-"<<endl;
 		}
 	clock_t start = clock();
-	while(clock()-start<10*CLOCKS_PER_SEC);
+	while(clock()-start<1*CLOCKS_PER_SEC);
 	system("cls");
 	
 	
 	
+
+    	    
+    	    
 	//SEGUNDA PANTALLA DE INICIO//
 		for(int k=1; k<=12; k++){
 			cout<<" "<<endl;
@@ -54,10 +64,15 @@ int main(){
 			cout<<" "<<endl;
 		}
 	clock_t start1 = clock();
-	while(clock()-start1<10*CLOCKS_PER_SEC);
+	while(clock()-start1<1*CLOCKS_PER_SEC);
 	system("cls");	
-	}
+	
+	}while(!kbhit());
+	
 //A PARTIR DE AQUI SE PONDRA LO QUE SALDRÁ LUEGO DE PULSAR CUALQUIER TECLA PARA INICIAR//
+	cout<<"Presione las letras “ EJECUTAR ” para dar inicio al programa"<<endl;
+	cout<<"Presione las letras “SALIR” para dejar de ejecutar el programa"<<endl;
+	cout<<"Presione las letras “FINALIZAR” para finalizar el programa"<<endl;
 
 
 

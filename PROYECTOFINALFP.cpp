@@ -21,6 +21,7 @@ int main(){
 	string input;
 	char s;
 	string boton;
+	string boton1;
 	int cmode=0;
 	
 	//FUNCIÓN PARA LAS DOS PANTALLAS MOSTRADAS (Y SE PODRÁ  SALIR DEL BUCLE CUANDO SE PRESIONE UNA TECLA//
@@ -43,6 +44,7 @@ int main(){
 	cout<<"     ";
 	cout<<"Presione las letras ´ FINALIZAR ´ para finalizar el programa"<<endl;
 	cout<<" "<<endl;
+	cout<<"     ";
 	cout<<"Ingrese la palabra: ";
 	cin>>boton;
 	if(boton=="ejecutar"){
@@ -52,29 +54,28 @@ int main(){
 	}else if (boton=="finalizar"){
 		cout<< funcioninicio(finalizar);
 	}else{
+	system("cls");
+	    for(int i=1;i<=5;i++){
+          	cout<<"              "<<endl;
+          	cout<<" "<<endl;
+     	}
+    	cout<<"                            ";
 		cout<<"Palabra no reconocida";
+        cout<<"                            ";
+        
+		for(int i=1;i<=5;i++){
+          	cout<<"              "<<endl;
+          	cout<<" "<<endl;
+		}
+		system("pause");
+		system("cls");
+    
 	}
 	
 	
 
-	return 0;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -147,27 +148,28 @@ void mostrarbienvenido(int kbhit()){
 
 string funcioninicio(Inicio boton){
 	switch (boton){
+		
 		case ejecutar:
 		//SE DARA INICIO AL PROGRAMA PRINCIPAL DONDE SE EJECUTARÁ LA MAYORIA DE LAS FUNCIONES
 		cout<<"prueba y error. ejecutar"<<endl;
 		//AQUI PUEDES PONER LA FUNCION PARA LO OTRO, YA SERÍA FUNCION DENTRO DE OTRA FUNCIÓN
+		
+		
+	
 		break;//para indicar que se terminó el switch
 		case salir:	
 			system("cls");
 			cout<<main();
-		
+			
 		break;
 		case finalizar:
-		cout<<"prueba y error. finalizar"<<endl;
-		//AQUI PUEDES PONER LA FUNCION PARA LO OTRO, YA SERÍA FUNCION DENTRO DE OTRA FUNCIÓN
+		cout<<" "<<endl;
+		cout<<" "<<endl;
+		
 		break;
 		default:
 			cout<< "ERROR.";
 	}
 }
-
-
-
-
 
 

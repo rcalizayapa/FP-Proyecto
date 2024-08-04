@@ -71,6 +71,26 @@ switch (opcion) {
                 cout << "Estudiante registrado exitosamente." << endl;
                 break;
             }
+             case 2: {
+                string llave;
+                cout << "Ingrese la llave del estudiante para registrar asistencia: ";
+                getline(cin, llave);
+
+                if (estudiantes.find(llave) != estudiantes.end()) {
+                    Estudiante& estudiante = estudiantes[llave];
+                    estudiante.horaIngreso = obtenerHoraActual();
+                    cout << "Hora de ingreso registrada: " << estudiante.horaIngreso << endl;
+                    cout << "Ingrese la hora de salida (deje en blanco si aún no ha salido): ";
+                    getline(cin, estudiante.horaSalida);
+                    if (estudiante.horaSalida.empty()) {
+                        estudiante.horaSalida = "Pendiente";
+                    }
+                    cout << "Asistencia registrada para " << estudiante.nombre << " " << estudiante.apellido << "." << endl;
+                } else {
+                    cout << "Estudiante no encontrado." << endl;
+                }
+                break;
+            }
 	
 	while (op !=4);
 	return 0;

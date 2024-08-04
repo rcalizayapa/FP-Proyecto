@@ -161,7 +161,23 @@ int main (){
         cout << "3. Salir" << endl;
         cout << "Selecciona una opcion: ";
         cin >> opcion;
-        cin.ignore(); 
+        cin.ignore();
+		
+		 switch (opcion) {
+            case 1:
+                menuAdministrador(estudiantes);
+                break;
+            case 2:
+                menuEstudiante(estudiantes);
+                break;
+            case 3:
+                cout << "Saliendo del programa..." << endl;
+                break;
+            default:
+                cout << "Opcion invalida, intente de nuevo." << endl;
+                break;
+        }
+    } while (opcion != 3); 
     
             
 	return 0;

@@ -35,7 +35,7 @@ int main (){
 		cout<<"1. Registrar al estudiante y su llave"<<endl;
 		cout<<"2. Indicar ingreso de llave para el registro de asistencia"<<endl;
 		cout<<"3. volver al menu principal"<<endl;
-		cout<<"selecione una opcion de las cuatro opciones: ";
+		cout<<"selecione una opcion de las tres opciones: ";
 		cin>>opcion;
 		cin.ignore();
 		
@@ -91,8 +91,17 @@ switch (opcion) {
                 }
                 break;
             }
+               case 3:
+                cout << "Volviendo al menu principal..." << endl;
+                break;
+            default:
+                cout << "Opcion invalida, intente de nuevo." << endl;
+                break;
+        }
+    } while (opcion != 3);
+}
 	
-	while (op !=4);
+
 	return 0;
 }
 

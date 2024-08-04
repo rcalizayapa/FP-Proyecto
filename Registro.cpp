@@ -73,9 +73,36 @@ using namespace std;
             cout << "Llave: ";
             getline(cin, est.llave);
 
-            estudiante.push_back(est);
+            estudiantes.push_back(est);
             cout<<"Datos guardados exitosamente.\n";
 
+        }
+    }
+
+    void ejecutarPrograma(){
+        string llave;
+        while(true){
+            cout<<"Ingrese su llave: ";
+            getline(cin, llave);
+
+            bool encontrado = false;
+            for(auto & est: estudiantes){
+                if(est.llave == llave){
+                    est.ingreso = obtenerHoraActual();
+                    encontrado = true;
+                    cout<<"Estudiante registrado: "<<est.nombre<<" "<<est.apellido<<endl;
+                    cout<<"Presione las letras 'SALIR'para dejar de ejecuatar el programa"<<endl;
+                    break;
+                }
+            }
+            if(!encontrado){
+                cout<<"Usuario no identificado\n";
+            }
+            string opción;
+            getline(cin, opcion);
+            if (opcion == "SALIR"){
+                break;
+            }
         }
     }
    

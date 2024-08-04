@@ -121,7 +121,8 @@ void menuEstudiante(map<string, Estudiante>& estudiantes) {
                     cout << "La llave ya está en uso. Intente con otra llave." << endl;
                     break;
                 }
-    cout << "Ingrese el nombre del estudiante: ";
+              
+			    cout << "Ingrese el nombre del estudiante: ";
                 getline(cin, nuevoEstudiante.nombre);
                 cout << "Ingrese el apellido del estudiante: ";
                 getline(cin, nuevoEstudiante.apellido);
@@ -141,7 +142,15 @@ void menuEstudiante(map<string, Estudiante>& estudiantes) {
                 cout << "Estudiante registrado exitosamente." << endl;
                 break;
             }
-            
+             case 2:
+                cout << "Volviendo al menu principal..." << endl;
+                break;
+            default:
+                cout << "Opcion invalida, intente de nuevo." << endl;
+                break;
+        }
+    } while (opcion != 2);
+}
             
 	return 0;
 }

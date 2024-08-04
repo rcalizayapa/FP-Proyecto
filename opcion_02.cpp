@@ -17,6 +17,16 @@ struct Estudiante {
     string horaSalida;
 };
 
+string obtenerHoraActual() {
+    time_t tiempo;
+    struct tm* tiempoLocal;
+    char buffer[9];
+    time(&tiempo);
+    tiempoLocal = localtime(&tiempo);
+    strftime(buffer, sizeof(buffer), "%H:%M:%S", tiempoLocal);
+    return string(buffer);
+}
+
 int main (){
 	int opcion;
 	do 

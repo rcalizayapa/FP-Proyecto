@@ -27,7 +27,6 @@ string obtenerHoraActual() {
     return string(buffer);
 }
 
-int main (){
 	void menuAdministrador(map<string, Estudiante>& estudiantes) {
 	int opcion;
 	do {
@@ -151,6 +150,19 @@ void menuEstudiante(map<string, Estudiante>& estudiantes) {
         }
     } while (opcion != 2);
 }
+int main (){
+	map<string, Estudiante> estudiantes;
+    int opcion;
+    
+    do {
+        cout << "Menu Principal" << endl;
+        cout << "1. Menu Administrador" << endl;
+        cout << "2. Menu Estudiante" << endl;
+        cout << "3. Salir" << endl;
+        cout << "Selecciona una opcion: ";
+        cin >> opcion;
+        cin.ignore(); 
+    
             
 	return 0;
 }

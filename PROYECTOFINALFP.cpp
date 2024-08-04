@@ -67,7 +67,9 @@ int main(){
           	cout<<"              "<<endl;
           	cout<<" "<<endl;
 		}
-
+		system("pause");
+		system("cls");
+    
 	}
 	
 	

@@ -137,7 +137,12 @@ void menuEstudiante(map<string, Estudiante>& estudiantes) {
                 cout << "Ingrese el numero de whatsapp del estudiante: ";
                 getline(cin, nuevoEstudiante.whatsapp);
                 
-                
+                   estudiantes[nuevoEstudiante.llave] = nuevoEstudiante;
+                cout << "Estudiante registrado exitosamente." << endl;
+                break;
+            }
+            
+            
 	return 0;
 }
 

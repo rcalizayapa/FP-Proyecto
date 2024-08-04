@@ -4,17 +4,93 @@
 #include <string>
 #include <stdio.h>
 using namespace std;
+enum Inicio{
+	ejecutar,
+	salir,
+	finalizar
+};
+
+//FUNCIONES----
+
+void mostrarbienvenido(int kbhit());
+string funcioninicio(Inicio boton);
+
+//PROGRAMA PRINCIPAL
+
 int main(){
 	string input;
 	char s;
+	string boton;
 	int cmode=0;
+	
+	//FUNCIÓN PARA LAS DOS PANTALLAS MOSTRADAS (Y SE PODRÁ  SALIR DEL BUCLE CUANDO SE PRESIONE UNA TECLA//
+		mostrarbienvenido(kbhit);
+		
+		
+	//A PARTIR DE AQUI SE PONDRA LO QUE SALDRÁ LUEGO DE PULSAR CUALQUIER TECLA PARA INICIAR//
+	for(int i=1;i<=5;i++){
+	cout<<"              "<<endl;
+	}
+	cout<<"                                  ";
+	cout<<"INDICACIONES: "<<endl;
+	for(int i=1;i<=5;i++){
+	cout<<"              "<<endl;
+	}
+	cout<<"     ";
+	cout<<"Presione las letras ´ EJECUTAR ´ para dar inicio al programa"<<endl;
+	cout<<"     ";
+	cout<<"Presione las letras ´ SALIR ´ para dejar de ejecutar el programa"<<endl;
+	cout<<"     ";
+	cout<<"Presione las letras ´ FINALIZAR ´ para finalizar el programa"<<endl;
+	cout<<" "<<endl;
+	cout<<"Ingrese la palabra: ";
+	cin>>boton;
+	if(boton=="ejecutar"){
+		cout<< funcioninicio(ejecutar);
+	}else if(boton =="salir"){
+		cout<< funcioninicio(salir);
+	}else if (boton=="finalizar"){
+		cout<< funcioninicio(finalizar);
+	}else{
+		cout<<"Palabra no reconocida";
+	}
+	
+	
+
+	return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//AQUI SE COLOCARÁN LAS FUNCIONES Y SUS CÓDIGOS
+void mostrarbienvenido(int kbhit()){
 	do{
-		if(kbhit()) 
-   		    {
-            s=getch();        //gets what key is pressed
+		char s;
+		int cmode=0;
+		if(kbhit()) //comprueba en la consola si se ha presionado una tecla recientemente.
+   		{
+            s=getch();      // en el bucle lee la cadena carácter
             if(s!='~') cmode=1;
-    	    }
-    	    		
+    	}
+    	    	  	
 	//PRIMERA PANTALLA QUE SE MOSTRARA AL USUARIO//
 		for(int k=1; k<=10; k++){
 			for(int m=1; m<=79; m++){
@@ -37,16 +113,14 @@ int main(){
 			}
 			cout<<"-"<<endl;
 		}
-	clock_t start = clock();
-	while(clock()-start<1*CLOCKS_PER_SEC);
-	system("cls");
+	clock_t start = clock(); // indica el tiempo de reloj que ha transcurrido
+	while(clock()-start<1*CLOCKS_PER_SEC);//verifica dentro de cuanto tiempo se va a tener la pantalla dada
+	system("cls"); //esta función se ocupará de limpiar la pantalla
 	
-	
-	
-
-    	    
+	   
     	    
 	//SEGUNDA PANTALLA DE INICIO//
+	
 		for(int k=1; k<=12; k++){
 			cout<<" "<<endl;
 		}
@@ -63,20 +137,36 @@ int main(){
 		for(int l=1; l<=10; l++){		
 			cout<<" "<<endl;
 		}
-	clock_t start1 = clock();
-	while(clock()-start1<1*CLOCKS_PER_SEC);
+	clock_t start1 = clock(); // indica el tiempo de reloj que ha transcurrido
+	while(clock()-start1<1*CLOCKS_PER_SEC); //verifica dentro de cuanto tiempo se va a tener la pantalla dada
 	system("cls");	
 	
 	}while(!kbhit());
-	
-//A PARTIR DE AQUI SE PONDRA LO QUE SALDRÁ LUEGO DE PULSAR CUALQUIER TECLA PARA INICIAR//
-	cout<<"Presione las letras “ EJECUTAR ” para dar inicio al programa"<<endl;
-	cout<<"Presione las letras “SALIR” para dejar de ejecutar el programa"<<endl;
-	cout<<"Presione las letras “FINALIZAR” para finalizar el programa"<<endl;
-
-
-
-
-	return 0;
-
 }
+
+
+string funcioninicio(Inicio boton){
+	switch (boton){
+		case ejecutar:
+		//SE DARA INICIO AL PROGRAMA PRINCIPAL DONDE SE EJECUTARÁ LA MAYORIA DE LAS FUNCIONES
+		cout<<"prueba y error. ejecutar"<<endl;
+		//AQUI PUEDES PONER LA FUNCION PARA LO OTRO, YA SERÍA FUNCION DENTRO DE OTRA FUNCIÓN
+		break;//para indicar que se terminó el switch
+		case salir:
+		cout<<"prueba y error. salir"<<endl;
+		//AQUI PUEDES PONER LA FUNCION PARA LO OTRO, YA SERÍA FUNCION DENTRO DE OTRA FUNCIÓN
+		break;
+		case finalizar:
+		cout<<"prueba y error. finalizar"<<endl;
+		//AQUI PUEDES PONER LA FUNCION PARA LO OTRO, YA SERÍA FUNCION DENTRO DE OTRA FUNCIÓN
+		break;
+		default:
+			cout<< "ERROR.";
+	}
+}
+
+
+
+
+
+

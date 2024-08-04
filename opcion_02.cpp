@@ -65,6 +65,12 @@ switch (opcion) {
                 getline(cin, nuevoEstudiante.codigo);
                 cout << "Ingrese el numero de whatsapp del estudiante: ";
                 getline(cin, nuevoEstudiante.whatsapp);
+                
+                nuevoEstudiante.llave = llave;
+                estudiantes[nuevoEstudiante.llave] = nuevoEstudiante;
+                cout << "Estudiante registrado exitosamente." << endl;
+                break;
+            }
 	
 	while (op !=4);
 	return 0;

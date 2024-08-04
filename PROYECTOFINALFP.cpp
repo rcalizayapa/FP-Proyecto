@@ -3,6 +3,7 @@
 #include <conio.h>
 #include <string>
 #include <stdio.h>
+#include<list>
 using namespace std;
 enum Inicio{
 	ejecutar,
@@ -29,6 +30,7 @@ int main(){
 		
 		
 	//A PARTIR DE AQUI SE PONDRA LO QUE SALDRÁ LUEGO DE PULSAR CUALQUIER TECLA PARA INICIAR//
+	//----------------------------------------------------------------------------------------------------
 	for(int i=1;i<=5;i++){
 	cout<<"              "<<endl;
 	}
@@ -45,6 +47,7 @@ int main(){
 	cout<<"Presione las letras ´ FINALIZAR ´ para finalizar el programa"<<endl;
 	cout<<" "<<endl;
 	cout<<"     ";
+	//---------------------------------------------------------------------------------------------------
 	cout<<"Ingrese la palabra: ";
 	cin>>boton;
 	if(boton=="ejecutar"){
@@ -54,7 +57,8 @@ int main(){
 	}else if (boton=="finalizar"){
 		cout<< funcioninicio(finalizar);
 	}else{
-	system("cls");
+		system("cls");
+		//---------------------------------------------------
 	    for(int i=1;i<=5;i++){
           	cout<<"              "<<endl;
           	cout<<" "<<endl;
@@ -67,21 +71,20 @@ int main(){
           	cout<<"              "<<endl;
           	cout<<" "<<endl;
 		}
+		//----------------------------------------------------
 		system("pause");
 		system("cls");
-    
-	}
+        return main();
+		}
+		
 	
-	
-
-
 }
 
 
 
-
-
 //AQUI SE COLOCARÁN LAS FUNCIONES Y SUS CÓDIGOS
+
+//01 FUNCIÓN
 void mostrarbienvenido(int kbhit()){
 	do{
 		char s;
@@ -147,29 +150,38 @@ void mostrarbienvenido(int kbhit()){
 
 
 string funcioninicio(Inicio boton){
+	int contra;
 	switch (boton){
 		
 		case ejecutar:
 		//SE DARA INICIO AL PROGRAMA PRINCIPAL DONDE SE EJECUTARÁ LA MAYORIA DE LAS FUNCIONES
-		cout<<"prueba y error. ejecutar"<<endl;
+		cout<<"INGRESE SU CONTRASEÑA: ";
+		cin>>contra;
 		//AQUI PUEDES PONER LA FUNCION PARA LO OTRO, YA SERÍA FUNCION DENTRO DE OTRA FUNCIÓN
+		if(contra==101010){//CONTRASEÑA DEL PROFESOR BARRAZA :)
+			cout<<"Probando";
+			//-------------------------------------------------------------------------------------------------------------------
 		
 		
-	
-		break;//para indicar que se terminó el switch
+		//_------------------------------------------------------------------------------------------------------------------------
+		system("cls");	
+		cout<<main();
+		}
+		else{
+			cout<<"CONTRASEÑA NO VALIDA"<<endl;
+		}
+		
+			break;//para indicar que se terminó el switch
 		case salir:	
 			system("cls");
 			cout<<main();
-			
-		break;
+			break;
 		case finalizar:
 		cout<<" "<<endl;
 		cout<<" "<<endl;
-		
 		break;
 		default:
 			cout<< "ERROR.";
 	}
 }
-
 

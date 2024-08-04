@@ -152,9 +152,10 @@ string funcioninicio(Inicio boton){
 		cout<<"prueba y error. ejecutar"<<endl;
 		//AQUI PUEDES PONER LA FUNCION PARA LO OTRO, YA SERÍA FUNCION DENTRO DE OTRA FUNCIÓN
 		break;//para indicar que se terminó el switch
-		case salir:
-		cout<<"prueba y error. salir"<<endl;
-		//AQUI PUEDES PONER LA FUNCION PARA LO OTRO, YA SERÍA FUNCION DENTRO DE OTRA FUNCIÓN
+		case salir:	
+			system("cls");
+			cout<<main();
+		
 		break;
 		case finalizar:
 		cout<<"prueba y error. finalizar"<<endl;

@@ -121,7 +121,23 @@ void menuEstudiante(map<string, Estudiante>& estudiantes) {
                     cout << "La llave ya está en uso. Intente con otra llave." << endl;
                     break;
                 }
-    
+    cout << "Ingrese el nombre del estudiante: ";
+                getline(cin, nuevoEstudiante.nombre);
+                cout << "Ingrese el apellido del estudiante: ";
+                getline(cin, nuevoEstudiante.apellido);
+                cout << "Ingrese la edad del estudiante: ";
+                cin >> nuevoEstudiante.edad;
+                cin.ignore(); 
+                cout << "Ingrese la escuela del estudiante: ";
+                getline(cin, nuevoEstudiante.escuela);
+                cout << "Ingrese el correo institucional del estudiante: ";
+                getline(cin, nuevoEstudiante.correo);
+                cout << "Ingrese el codigo institucional del estudiante: ";
+                getline(cin, nuevoEstudiante.codigo);
+                cout << "Ingrese el numero de whatsapp del estudiante: ";
+                getline(cin, nuevoEstudiante.whatsapp);
+                
+                
 	return 0;
 }
 

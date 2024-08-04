@@ -28,16 +28,15 @@ string obtenerHoraActual() {
 }
 
 int main (){
+	void menuAdministrador(map<string, Estudiante>& estudiantes) {
 	int opcion;
-	do 
-	{
+	do {
 		cout<<"Menu del administrador"<<endl;
-		cout<<"1. Registrar al estudiante"<<endl;
-		cout<<"2. Registrar su asistencia"<<endl;
-		cout<<"3. Indicar ingreso de llave para el registro de asistencia"<<endl;
-		cout<<"4. volver al menu principal"<<endl;
+		cout<<"1. Registrar al estudiante y su llave"<<endl;
+		cout<<"2. Indicar ingreso de llave para el registro de asistencia"<<endl;
+		cout<<"3. volver al menu principal"<<endl;
 		cout<<"selecione una opcion de las cuatro opciones: ";
-		cin>>op;
+		cin>>opcion;
 		cin.ignore();
 		
 

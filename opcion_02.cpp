@@ -101,7 +101,16 @@ switch (opcion) {
     } while (opcion != 3);
 }
 	
-
+void menuEstudiante(map<string, Estudiante>& estudiantes) {
+    int opcion;
+    do {
+        cout << "Menu Estudiante" << endl;
+        cout << "1. Registrar mis datos" << endl;
+        cout << "2. Volver al menu principal" << endl;
+        cout << "Selecciona una opcion: ";
+        cin >> opcion;
+        cin.ignore();
+    
 	return 0;
 }
 

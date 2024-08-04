@@ -110,6 +110,17 @@ void menuEstudiante(map<string, Estudiante>& estudiantes) {
         cout << "Selecciona una opcion: ";
         cin >> opcion;
         cin.ignore();
+        
+         switch (opcion) {
+            case 1: {
+                Estudiante nuevoEstudiante;
+                cout << "Ingrese la llave del estudiante: ";
+                getline(cin, nuevoEstudiante.llave);
+
+                if (estudiantes.find(nuevoEstudiante.llave) != estudiantes.end()) {
+                    cout << "La llave ya está en uso. Intente con otra llave." << endl;
+                    break;
+                }
     
 	return 0;
 }

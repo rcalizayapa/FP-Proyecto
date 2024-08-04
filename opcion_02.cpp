@@ -5,7 +5,7 @@
 using namespace std;
 
 struct Estudiante {
-    string clave;
+    string llave;
     string nombre;
     string apellido;
     int edad;
@@ -39,9 +39,17 @@ int main (){
 		cin>>opcion;
 		cin.ignore();
 		
+switch (opcion) {
+            case 1: {
+                string llave;
+                Estudiante nuevoEstudiante;              
+                cout << "Ingrese la llave del estudiante: ";
+                getline(cin, llave);
 
-
-	}
+                if (estudiantes.find(llave) != estudiantes.end()) {
+                    cout << "La llave ya está en uso. Intente con otra llave." << endl;
+                    break;
+            	}
 	
 	
 	while (op !=4);

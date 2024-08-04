@@ -12,11 +12,11 @@ using namespace std;
       string nombre;
       string apellido;
       int edad;
-      float estatura;
+      string estatura;
       string escuela;
       string correo;
       string codigo;
-      int whatsapp;
+      string whatsapp;
       string ingreso;//En esta parte se registrara la hora de ingreso
       string salida;//Aqui se registra la hora de salida
       string llave;
@@ -39,6 +39,44 @@ using namespace std;
         char buffer[6];
         snprintf(buffer, sizeof(buffer), "%02d:%02d",ltm->tm_hour, ltm->tm_min);
         return string(buffer);
+    }
+
+    //funciones del menu
+    void ingresarDatosDeEstudiantes(){
+        int cantidad;
+        cout<<"Ingrese la cantidad de estudiantes: ";cin>>cantidad;
+        cin.ignore();  //Limpiar la pantalla de entrada
+
+        for(int i = 0; i < cantidad; ++i){
+            estudiante est;
+            est.id = i + 1;//funcion para agregar un ID
+            cout<< "Nombres: ";
+            getline(cin, est.nombre);
+            cout<< "Apellidos: ";
+            getline(cin, est.apellido);
+            cout<< "Edad: ";
+            cin>>est.edad;
+            cin.ignore();
+            cout<< "Estatura: ";
+            getline(cin, est.estatura);
+            cout<< "Escuela: ";
+            getline(cin, est.escuela);
+            cout << "Correo: ";
+            getline(cin, est.correo);
+            cout << "Código universitario: ";
+            getline(cin, est.codigo);
+            cout << "Whatsapp: ";
+            getline(cin, est.whatsapp);
+            cout << "Ingreso (hora, ej. 07:30): ";
+            getline(cin, est.ingreso);
+            est.salida = ""; // Aún no ha salido
+            cout << "Llave: ";
+            getline(cin, est.llave);
+
+            estudiante.push_back(est);
+            cout<<"Datos guardados exitosamente.\n";
+
+        }
     }
    
 

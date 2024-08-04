@@ -71,12 +71,19 @@ int main(){
           	cout<<"              "<<endl;
           	cout<<" "<<endl;
 		}
+<<<<<<< HEAD
 		//----------------------------------------------------
 		system("pause");
 		system("cls");
         return main();
 		}
 		
+=======
+		system("pause");
+		system("cls");
+    
+	}
+>>>>>>> 7096d4efb733e90a4ac7919b8c212311e5a0ca9e
 	
 }
 

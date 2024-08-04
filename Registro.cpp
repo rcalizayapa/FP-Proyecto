@@ -42,7 +42,7 @@ using namespace std;
     }
 
     //funciones del menu
-    void ingresarDatosDeEstudiantes(){
+    void ingresarDatosEstudiantes(){
         int cantidad;
         cout<<"Ingrese la cantidad de estudiantes: ";cin>>cantidad;
         cin.ignore();  //Limpiar la pantalla de entrada
@@ -67,7 +67,7 @@ using namespace std;
             getline(cin, est.codigo);
             cout << "Whatsapp: ";
             getline(cin, est.whatsapp);
-            cout << "Ingreso (hora, ej. 07:30): ";
+            cout << "Ingreso: ";
             getline(cin, est.ingreso);
             est.salida = ""; // Aún no ha salido
             cout << "Llave: ";
@@ -75,6 +75,7 @@ using namespace std;
 
             estudiantes.push_back(est);
             cout<<"Datos guardados exitosamente.\n";
+            cout<<"Siguiente alumno \n";
 
         }
     }
@@ -98,7 +99,7 @@ using namespace std;
             if(!encontrado){
                 cout<<"Usuario no identificado\n";
             }
-            string opción;
+            string opcion;
             getline(cin, opcion);
             if (opcion == "SALIR"){
                 break;
@@ -106,27 +107,33 @@ using namespace std;
         }
     }
    
+    void mostrarMenuSecundario(){
+        
+        while(true){
+    
+        //Función para mostrar el menu secundario
+        cout<<"1.- Registrar estudiantes: "<<endl;
+        cout<<"2.- Ejecutar registro de asistencia: "<<endl;
+        cout<<"3.- Volver al menu principal: "<<endl;
+        cout<<"4.- Finalizar programa\n";
+        string opcion;
+        getline(cin, opcion);
+        if (opcion == "1"){
+            ingresarDatosEstudiantes();
+        } else if (opcion == "2"){
+            ejecutarPrograma();
+        } else if (opcion == "3"){
+            break;
+        } else if (opcion == "4"){
+        cout<<"Finalizando el programa...n";
+        exit(0);
+        } else {
+            cout<<"opcion no valida. Intente nuevamente\n";
+            }
+    }
+    }
 
-    int registro;
-    do{
-    //Función para mostrar el menu secundario
-    cout<<"1.- Registrar estudiantes: "<<endl;
-    cout<<"2.- Ejecutar registro de asistencia: "<<endl;
-    cout<<"3.- Volver al menu principal: ";cin>>registro;
-
-    switch(registro){
-        case 1: 
-
-        break;
-        case 2: cout<<"EJECUTAR "<<endl;
-        break;
-        case 3: cout<<"Volviendo al menu principal "<<endl;
-        break;
-        default: cout<<"Opcion no valida "<<endl;
-        break;
-        }
-        cout<<endl;//Linea en blaco para mejor comprensión
-    } while(registro != 3);
-    return 0;
-
-}
+    int main(){
+        mostrarMenuSecundario();
+        return 0;
+    }

@@ -32,12 +32,12 @@ using namespace std;
             system("clear");
         #endif
     }
-    //función para obtener la hora del ordenador
+    //función para obtener la hora del ordenador en formato "HH:MM:SS"
     string obtenerHoraActual(){
         time_t ahora = time(0);
         tm *ltm = localtime(&ahora);
-        char buffer[6];
-        snprintf(buffer, sizeof(buffer), "%02d:%02d",ltm->tm_hour, ltm->tm_min);
+        char buffer[9];
+        snprintf(buffer, sizeof(buffer), "%02d:%02d",ltm->tm_hour, ltm->tm_min, ltm-> tm_sec);
         return string(buffer);
     }
 
@@ -67,12 +67,11 @@ using namespace std;
             getline(cin, est.codigo);
             cout << "Whatsapp: ";
             getline(cin, est.whatsapp);
-            cout << "Ingreso: ";
-            getline(cin, est.ingreso);
-            est.salida = ""; // Aún no ha salido
             cout << "Llave: ";
             getline(cin, est.llave);
-
+            est.ingreso  = ""; //Solo se registrara cuando se ingrese
+            est.salida = ""; //Solo se registrara cuando se retire el estudiante
+            //estA
             estudiantes.push_back(est);
             cout<<"Datos guardados exitosamente.\n";
             cout<<"Siguiente alumno \n";
@@ -89,16 +88,22 @@ using namespace std;
             bool encontrado = false;
             for(auto & est: estudiantes){
                 if(est.llave == llave){
-                    est.ingreso = obtenerHoraActual();
-                    encontrado = true;
-                    cout<<"Estudiante registrado: "<<est.nombre<<" "<<est.apellido<<endl;
-                    cout<<"Presione las letras 'SALIR'para dejar de ejecuatar el programa"<<endl;
+                    if(est.ingreso.empty()){
+                       est.ingreso = obtenerHoraActual();
+                       cout<<"Hora de ingreso registrada: "<<est.ingreso<<endl;
+                    } else {
+                        est.salida = obtenerHoraActual();
+                        cout<<"Hora de salida registrada: "<<est.salida<<endl;
+                    }
+                    encontrado == true;
+                    cout<<"Estudiante registrado: "<<est.nombre<< " " <<est.apellido<<endl;
                     break;
                 }
             }
             if(!encontrado){
                 cout<<"Usuario no identificado\n";
             }
+            cout<<"Precione las letras 'SALIR' para dejar de ejecutar el programa\n";
             string opcion;
             getline(cin, opcion);
             if (opcion == "SALIR"){
@@ -132,6 +137,8 @@ using namespace std;
             }
     }
     }
+
+
 
     int main(){
         mostrarMenuSecundario();

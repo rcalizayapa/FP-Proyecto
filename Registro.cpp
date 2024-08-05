@@ -41,7 +41,7 @@ using namespace std;
         return string(buffer);
     }
 
-    //funciones del menu
+    //funciones del menu secundario
     void ingresarDatosEstudiantes(){
         int cantidad;
         cout<<"Ingrese la cantidad de estudiantes: ";cin>>cantidad;
@@ -69,14 +69,28 @@ using namespace std;
             getline(cin, est.whatsapp);
             cout << "Llave: ";
             getline(cin, est.llave);
-            est.ingreso  = ""; //Solo se registrara cuando se ingrese
+            est.ingreso  = ""; //Solo se registrara cuando ingrese el estudiante
             est.salida = ""; //Solo se registrara cuando se retire el estudiante
-            //estA
+            
             estudiantes.push_back(est);
             cout<<"Datos guardados exitosamente.\n";
             cout<<"Siguiente alumno \n";
 
         }
+    }
+    //Funcion para mostrar los datos de los estudiantes al momento de registrar su asistencia
+    void mostrarDatosEstudiante(const estudiante& est) {
+    cout << "ID: " << est.id << endl;
+    cout << "Nombre: " << est.nombre << endl;
+    cout << "Apellido: " << est.apellido << endl;
+    cout << "Edad: " << est.edad << endl;
+    cout << "Estatura: " << est.estatura << endl;
+    cout << "Escuela: " << est.escuela << endl;
+    cout << "Correo: " << est.correo << endl;
+    cout << "Código universitario: " << est.codigo << endl;
+    cout << "Whatsapp: " << est.whatsapp << endl;
+    cout << "Hora de ingreso: " << est.ingreso << endl;
+    cout << "Hora de salida: " << est.salida << endl;
     }
 
     void ejecutarPrograma(){
@@ -85,18 +99,18 @@ using namespace std;
             cout<<"Ingrese su llave: ";
             getline(cin, llave);
 
-            bool encontrado = false;
+            bool encontrado = false;// Lineas que indican si se encontro otro estudiante con la misma llave
             for(auto & est: estudiantes){
-                if(est.llave == llave){
+                if(est.llave == llave){//Se compara la llave de todos los estudiantes
                     if(est.ingreso.empty()){
                        est.ingreso = obtenerHoraActual();
                        cout<<"Hora de ingreso registrada: "<<est.ingreso<<endl;
-                    } else {
+                    } else {//Mediante estas lineas se registra el ingreso del estudiante
                         est.salida = obtenerHoraActual();
                         cout<<"Hora de salida registrada: "<<est.salida<<endl;
-                    }
-                    encontrado == true;
-                    cout<<"Estudiante registrado: "<<est.nombre<< " " <<est.apellido<<endl;
+                    }// Mediante estas lineas de codigo se registra su hora de retiro
+                    encontrado = true;
+                    mostrarDatosEstudiante(est);
                     break;
                 }
             }
@@ -104,7 +118,7 @@ using namespace std;
                 cout<<"Usuario no identificado\n";
             }
             cout<<"Precione las letras 'SALIR' para dejar de ejecutar el programa\n";
-            string opcion;
+            string opcion;//Opcion para avandonar la ejecucion del programa
             getline(cin, opcion);
             if (opcion == "SALIR"){
                 break;
@@ -136,11 +150,11 @@ using namespace std;
             cout<<"opcion no valida. Intente nuevamente\n";
             }
     }
-    }
+}
 
 
 
-    int main(){
-        mostrarMenuSecundario();
-        return 0;
-    }
+int main(){
+    mostrarMenuSecundario();
+    return 0;
+}

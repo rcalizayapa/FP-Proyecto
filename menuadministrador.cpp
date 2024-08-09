@@ -62,4 +62,11 @@ void ingresarDatosEstudiantes(){
         }
     }
     //---------------------//
-    
+    void mostrarListaEstudiantes(){
+    	cout<<"Lista de estudiantes registrados: "<<endl;
+    	for (const auto& est:estudiantes){
+		mostrarDatosEstudiante(est);
+    	cout<<endl;
+		}
+    	
+	}

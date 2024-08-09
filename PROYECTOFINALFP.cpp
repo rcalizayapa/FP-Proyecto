@@ -3,7 +3,8 @@
 #include <conio.h>
 #include <string>
 #include <stdio.h>
-#include<list>
+#include "PROYECTOFINALFP.h"
+#include"main.h"
 using namespace std;
 enum Inicio{
 	ejecutar,
@@ -13,88 +14,12 @@ enum Inicio{
 
 //FUNCIONES----
 
-void mostrarbienvenido(int kbhit());
-string funcioninicio(Inicio boton);
+//AQUI SE COLOCARON LAS FUNCIONES Y SUS Cï¿½DIGOS
 
-//PROGRAMA PRINCIPAL
-
-int main(){
-	string input;
-	char s;
-	string boton;
-	string boton1;
-	int cmode=0;
-	
-	//FUNCIÓN PARA LAS DOS PANTALLAS MOSTRADAS (Y SE PODRÁ  SALIR DEL BUCLE CUANDO SE PRESIONE UNA TECLA//
-		mostrarbienvenido(kbhit);
-		
-		
-	//A PARTIR DE AQUI SE PONDRA LO QUE SALDRÁ LUEGO DE PULSAR CUALQUIER TECLA PARA INICIAR//
-	//----------------------------------------------------------------------------------------------------
-	for(int i=1;i<=5;i++){
-	cout<<"              "<<endl;
-	}
-	cout<<"                                  ";
-	cout<<"INDICACIONES: "<<endl;
-	for(int i=1;i<=5;i++){
-	cout<<"              "<<endl;
-	}
-	cout<<"     ";
-	cout<<"Presione las letras ´ EJECUTAR ´ para dar inicio al programa"<<endl;
-	cout<<"     ";
-	cout<<"Presione las letras ´ SALIR ´ para dejar de ejecutar el programa"<<endl;
-	cout<<"     ";
-	cout<<"Presione las letras ´ FINALIZAR ´ para finalizar el programa"<<endl;
-	cout<<" "<<endl;
-	cout<<"     ";
-	//---------------------------------------------------------------------------------------------------
-	cout<<"Ingrese la palabra: ";
-	cin>>boton;
-	if(boton=="ejecutar"){
-		cout<< funcioninicio(ejecutar);
-	}else if(boton =="salir"){
-		cout<< funcioninicio(salir);
-	}else if (boton=="finalizar"){
-		cout<< funcioninicio(finalizar);
-	}else{
-		system("cls");
-		//---------------------------------------------------
-	    for(int i=1;i<=5;i++){
-          	cout<<"              "<<endl;
-          	cout<<" "<<endl;
-     	}
-    	cout<<"                            ";
-		cout<<"Palabra no reconocida";
-        cout<<"                            ";
-        
-		for(int i=1;i<=5;i++){
-          	cout<<"              "<<endl;
-          	cout<<" "<<endl;
-		}
-		//----------------------------------------------------
-		system("pause");
-		system("cls");
-        return main();
-		}
-		
-	
-}
-
-
-
-//AQUI SE COLOCARÁN LAS FUNCIONES Y SUS CÓDIGOS
-
-//01 FUNCIÓN
+//01 FUNCION
 void mostrarbienvenido(int kbhit()){
 	do{
-		char s;
-		int cmode=0;
-		if(kbhit()) //comprueba en la consola si se ha presionado una tecla recientemente.
-   		{
-            s=getch();      // en el bucle lee la cadena carácter
-            if(s!='~') cmode=1;
-    	}
-    	    	  	
+		  	
 	//PRIMERA PANTALLA QUE SE MOSTRARA AL USUARIO//
 		for(int k=1; k<=10; k++){
 			for(int m=1; m<=79; m++){
@@ -119,7 +44,7 @@ void mostrarbienvenido(int kbhit()){
 		}
 	clock_t start = clock(); // indica el tiempo de reloj que ha transcurrido
 	while(clock()-start<1*CLOCKS_PER_SEC);//verifica dentro de cuanto tiempo se va a tener la pantalla dada
-	system("cls"); //esta función se ocupará de limpiar la pantalla
+	system("cls"); //esta función se ocuparía de limpiar la pantalla
 	
 	   
     	    
@@ -151,27 +76,28 @@ void mostrarbienvenido(int kbhit()){
 
 string funcioninicio(Inicio boton){
 	int contra;
+	
 	switch (boton){
 		
 		case ejecutar:
-		//SE DARA INICIO AL PROGRAMA PRINCIPAL DONDE SE EJECUTARÁ LA MAYORIA DE LAS FUNCIONES
-		cout<<"INGRESE SU CONTRASEÑA: ";
+		//SE DARA INICIO AL PROGRAMA PRINCIPAL DONDE SE EJECUTARIA LA MAYORIA DE LAS FUNCIONES
+		cout<<"INGRESE SU CONTRASEï¿½A: ";
 		cin>>contra;
-		//AQUI PUEDES PONER LA FUNCION PARA LO OTRO, YA SERÍA FUNCION DENTRO DE OTRA FUNCIÓN
+		//AQUI PUEDES PONER LA FUNCION PARA LO OTRO, YA SERIA FUNCION DENTRO DE OTRA FUNCIï¿½N
 		if(contra==101010){//CONTRASEÑA DEL PROFESOR BARRAZA :)
 			cout<<"Probando";
 			//-------------------------------------------------------------------------------------------------------------------
-		
+		system("pause");
 		
 			//_------------------------------------------------------------------------------------------------------------------------
 		system("cls");	
 		cout<<main();
 		}
 		else{
-			cout<<"CONTRASEÑA NO VALIDA"<<endl;
+			cout<<"CONTRASEï¿½A NO VALIDA"<<endl;
 		}
 		
-			break;//para indicar que se terminó el switch
+			break;//para indicar que se termino el switch
 		case salir:	
 			system("cls");
 			cout<<main();
@@ -184,4 +110,8 @@ string funcioninicio(Inicio boton){
 			cout<< "ERROR.";
 	}
 }
+
+
+
+	
 

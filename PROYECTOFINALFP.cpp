@@ -6,11 +6,7 @@
 #include "PROYECTOFINALFP.h"
 #include"main.h"
 using namespace std;
-enum Inicio{
-	ejecutar,
-	salir,
-	finalizar
-};
+
 
 //FUNCIONES----
 

@@ -7,6 +7,11 @@
 #include<stdio.h>
 
 using namespace std;
+enum Inicio{
+	ejecutar,
+	salir,
+	finalizar
+};
 int main();
 void mostrarbienvenido(int kbhit());
 string funcioninicio(Inicio boton);

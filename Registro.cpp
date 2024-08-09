@@ -1,4 +1,5 @@
 #include<iostream>
+#include"funciones.h"
 #include<ctime>
 #include<fstream>
 #include<string>

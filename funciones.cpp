@@ -1,4 +1,3 @@
-#include<iostream>
 #include"funciones.h"
 #include<ctime>
 #include<fstream>
@@ -7,21 +6,6 @@
 #include<conio.h>
 using namespace std;
 
-
-    struct estudiante{
-      int id;
-      string nombre;
-      string apellido;
-      int edad;
-      string estatura;
-      string escuela;
-      string correo;
-      string codigo;
-      string whatsapp;
-      string ingreso;//En esta parte se registrara la hora de ingreso
-      string salida;//Aqui se registra la hora de salida
-      string llave;
-    };
 
     list<estudiante> estudiantes;
 
@@ -151,11 +135,4 @@ using namespace std;
             cout<<"opcion no valida. Intente nuevamente\n";
             }
     }
-}
-
-
-
-int main(){
-    mostrarMenuSecundario();
-    return 0;
 }

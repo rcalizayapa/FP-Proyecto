@@ -7,7 +7,7 @@
 #include<stdio.h>
 
 using namespace std;
-
+int main();
 void mostrarbienvenido(int kbhit());
 string funcioninicio(Inicio boton);
 
